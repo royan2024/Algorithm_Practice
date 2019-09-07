@@ -8,3 +8,6 @@ def add_three(x):
 
 def mult_five(x):
     return x * 5
+
+def mult(x, y):
+    return x * y
