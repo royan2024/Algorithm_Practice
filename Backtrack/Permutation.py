@@ -54,35 +54,44 @@ def perm(size, max_number, check_func, l = None):
             perm(size, max_number, check_func, l)
             l.remove(a)
 
-password = int(input("Enter Password:"))
-def make_pw():
-    pw = []
-    for i in range(10):
-        for a in range(10):
-            if a not in pw:
-                pw.append(a)
-                pw.remove(a)
 
-def get_pw():
-    guess = []
-    for i in range(10):
-        for a in range(10):
-            if a not in guess:
-                guess.append(a)
-                guess.remove(a)
-    if guess == password:
-        print("CORRECT! %s" % guess)
+if __name__ == "__main__":
+    practice = "Magic"
 
-def check_pw(l):
-    pw = 0
-    for x in l:
-        pw = pw * 10 + x
-    if pw == password:
-        print(("CORRECT" + str(password)))
+    if practice == "Password":
+        password = int(input("Enter Password:"))
+        def make_pw():
+            pw = []
+            for i in range(10):
+                for a in range(10):
+                    if a not in pw:
+                        pw.append(a)
+                        pw.remove(a)
 
-def get_pattern(guess):
-    if guess[0] + guess[3] + guess[6] == guess[1] + guess[4] + guess[7] == guess[2] + guess[5] + guess[8] == guess[0] + guess[1] + guess[2] == guess[3] + guess[4] + guess[5] == guess[6] + guess[7] + guess[8] == guess[0] + guess[4] + guess[8] == guess[2] + guess[4] + guess[6]:
-        print("CORRECT! %s" % guess)
+        def get_pw():
+            guess = []
+            for i in range(10):
+                for a in range(10):
+                    if a not in guess:
+                        guess.append(a)
+                        guess.remove(a)
+            if guess == password:
+                print("CORRECT! %s" % guess)
+
+        def check_pw(l):
+            pw = 0
+            for x in l:
+                pw = pw * 10 + x
+            if pw == password:
+                print(("CORRECT" + str(password)))
+
+        for i in range(1, 10):
+            perm(i, 9, check_pw)
+
+    if practice == "Magic":
+        def get_pattern(guess):
+            if guess[0] + guess[3] + guess[6] == guess[1] + guess[4] + guess[7] == guess[2] + guess[5] + guess[8] == guess[0] + guess[1] + guess[2] == guess[3] + guess[4] + guess[5] == guess[6] + guess[7] + guess[8] == guess[0] + guess[4] + guess[8] == guess[2] + guess[4] + guess[6]:
+                print("CORRECT! %s" % guess)
 
 
-perm(9, 9, get_pattern)
+        perm(9, 9, get_pattern)
