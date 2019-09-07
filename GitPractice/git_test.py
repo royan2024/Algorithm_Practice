@@ -7,4 +7,4 @@ def add_three(x):
 
 
 def mult_five(x):
-    raise NotImplementedError
+    return x * 5
