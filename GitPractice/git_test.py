@@ -3,7 +3,7 @@ print("Hello, my name is Roy")
 
 
 def add_three(x):
-    raise NotImplementedError
+    return x + 3
 
 
 def mult_five(x):
