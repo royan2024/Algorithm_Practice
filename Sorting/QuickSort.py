@@ -1,14 +1,17 @@
-def test_list(l: list):
-    l[0], l[-1] = l[-1], l[0]
+def partition(A: list, lo: int, hi: int) -> int:
+    pivot = A[hi]
+    # pivot이 들어갈 위치
+    return 0
 
-def test_int(a, b):
-    a, b = b, a
+
+def quick_sort(A: list, lo: int, hi: int):
+    if lo < hi:
+        p = partition(A, lo, hi)
+        quick_sort(A, lo, p - 1)
+        quick_sort(A, p + 1, hi)
+
 
 if __name__ == "__main__":
-    l = [1, 2, 3, 4, 5]
-    test_list(l)
+    l = [3, 7, 8, 5, 2, 1, 5, 9, 4]
+    quick_sort(l, 0, len(l) - 1)
     print(l)
-    a = 10
-    b = 5
-    test_int(a, b)
-    print(a, b)
