@@ -3,16 +3,13 @@
 
 def insertion_sort(l: list) -> list:
     sorted_list = []
-    i = 1
+    i = 0
     while i < len(l):
-        a = i
-        while a > 0 and l[a - 1] > l[a]:
-            l[a - 1], l[a] = l[a], l[a - 1]
-            a = a - 1
-            sorted_list = l
-        i = i - 1
-
-
+        x = l[i]
+        # TODO: x가 sorted list의 어디에 들어가야 하나?
+        # how-1: sorted list를 앞에서부터 보고, x보다 큰 값이 나오는 위치에 x를 insert
+        # how-2: sorted list를 binary search하고 맞는 위치에 x를 insert
+        i = i + 1
 
     return sorted_list
 
