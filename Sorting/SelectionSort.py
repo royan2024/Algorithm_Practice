@@ -12,17 +12,17 @@ def find_min_number(l: list) -> int:
 
 def selection_sort(l: list):
     sorted_list = []
-    i = 1
-    while i < len(l):
+    while len(l) > 0:
         # find min number
+        m = find_min_number(l)
         # remove from original list
+        l.remove(m)
         # insert to sorted list
-        i = i + 1
+        sorted_list.append(m)
 
     return sorted_list
 
 if __name__ == "__main__":
     l = [3, 7, 8, 5, 2, 1, 5, 9, 4]
-    print(find_min_number(l))
-    selection_sort(l)
+    l = selection_sort(l)
     print(l)
