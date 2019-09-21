@@ -3,9 +3,17 @@
 
 def insertion_sort(l: list) -> list:
     sorted_list = []
-    ##### YOUR CODE HERE #####
-    raise NotImplementedError
-    ##########################
+    i = 1
+    while i < len(l):
+        a = i
+        while a > 0 and l[a - 1] > l[a]:
+            l[a - 1], l[a] = l[a], l[a - 1]
+            a = a - 1
+            sorted_list = l
+        i = i - 1
+
+
+
     return sorted_list
 
 
