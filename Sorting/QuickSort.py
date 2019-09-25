@@ -1,7 +1,13 @@
 def partition(A: list, lo: int, hi: int) -> int:
     pivot = A[hi]
+    i = lo
+    for j in range(lo, hi):
+        if A[j] < pivot:
+            A[i], A[j] = A[j], A[i]
+            i = i + 1
+    A[i], A[hi] = A[hi], A[i]
     # pivot이 들어갈 위치
-    return 0
+    return i
 
 
 def quick_sort(A: list, lo: int, hi: int):
