@@ -25,11 +25,11 @@ def merge_sort(l:list):
         return l
     elif len(l) > 1:
         idx = len(l) // 2
-        first.append(l(1~idx))
-        second.append(l(idx~len(l)))
-        merge_sort(first)
-        merge_sort(second)
-        merge(first, second)
+        first.extend(l[0:idx])
+        second.extend(l[idx:len(l)])
+        first = merge_sort(first)
+        second = merge_sort(second)
+        return merge(first, second)
 
 
 
@@ -42,4 +42,4 @@ def merge_sort(l:list):
 
 if __name__ == "__main__":
     print(merge([1, 3, 5, 6], [2, 4, 7, 8]))
-    print(merge_sort([6, 5, 3, 1, 8, 7, 2, 4]))
+    print(merge_sort([6, 5, 3, 1, 8, 7, 2, 4, 5]))
