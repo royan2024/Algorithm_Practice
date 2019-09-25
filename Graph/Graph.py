@@ -18,6 +18,9 @@ class Graph:
     def get_verts(self):
         return list(range(self.vert_size))
 
+    def get_edge(self, start, end):
+        return self.edges[start - 1][end - 1]
+
     def add_edge(self, start, end, value):
         if start > self.vert_size or end > self.vert_size:
             raise Exception("(%d, %d) is out of range: %d" % (start, end, self.vert_size))
