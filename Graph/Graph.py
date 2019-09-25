@@ -16,7 +16,7 @@ class Graph:
         return s
 
     def get_verts(self):
-        return list(range(self.vert_size))
+        return list(range(1, self.vert_size + 1))
 
     def get_edge(self, start, end):
         return self.edges[start - 1][end - 1]
